@@ -28,7 +28,6 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   static_pages:
     home:
@@ -79,5 +78,3 @@ en:
       text-6: "Contact"
       text-7: "News"
   base_title: "Ruby on rails"
-
-
