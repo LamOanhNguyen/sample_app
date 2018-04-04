@@ -30,4 +30,54 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  static_pages:
+    home:
+      title: "Sample App"
+      text-1: "This is the home page for the"
+      text-2: "Ruby on Rails Tutorial"
+      text-3: "sample application."
+      text-4: "Sign up now!"
+      text-5: "Rails logo"
+    help:
+      title: "Help"
+      text-1: "Get help on the Ruby on Rails Tutorial at the"
+      text-2: "Rails Tutorial help section"
+      text-3: "To get help on this sample app, see the"
+      text-4: "Ruby on Rails Tutorial"
+      text-5: "book"
+    contact:
+      title: "Contact"
+      text-1: "Contact the Ruby on Rails Tutorial about the sample app at the"
+      text-2: "contact page"
+    about:
+      title: "About"
+      text-1: "The"
+      text-2: "Ruby on Rails Tutorial"
+      text-3: "is a"
+      text-4: "book"
+      text-5: "and"
+      text-6: "screencast series"
+      text-7: "to teach web development with"
+      text-8: "Ruby on Rails"
+      text-9: "This is the sample application for the tutorial."
+  users:
+    new:
+      title: "Sign up"
+      text-1: "This will be a signup page for new users."
+  layouts:
+    header:
+      text-1: "sample app"
+      text-2: "Home"
+      text-3: "Help"
+      text-4: "Log in"
+    footer:
+      text-1: "The"
+      text-2: "Ruby on Rails Tutorial"
+      text-3: "by"
+      text-4: "Michael Hartl"
+      text-5: "About"
+      text-6: "Contact"
+      text-7: "News"
+  base_title: "Ruby on rails"
+
+
