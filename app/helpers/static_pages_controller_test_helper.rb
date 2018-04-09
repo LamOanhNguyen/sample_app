@@ -1,0 +1,2 @@
+module StaticPagesControllerTestHelper
+end
