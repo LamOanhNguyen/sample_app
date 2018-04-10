@@ -1,6 +1,5 @@
-<% provide :title, t(".title") %>
-<h1><%= t ".title" %></h1>
+<% provide :title, t("static_pages.contact.title") %>
+<h1><%= t "static_pages.contact.title" %></h1>
 <p>
-  <%= t ".text-1" %>
-  <%= link_to t(".text-2"), "http://www.railstutorial.org/contact" %>.
-</p>
+  Contact the Ruby on Rails Tutorial about the sample app at the
+  <%= link_to t("static_pages.contact.link_to_contact"), "http://www.railstutorial.org/contact" %>
