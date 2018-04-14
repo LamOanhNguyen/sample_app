@@ -69,6 +69,10 @@ en:
       text-2: "Home"
       text-3: "Help"
       text-4: "Log in"
+      users_header:  "Users"
+      profite_header: "Profile"
+      setting_header: "Setting"
+      log_out_hearder: "Log_out"
     footer:
       text-1: "The"
       text-2: "Ruby on Rails Tutorial"
