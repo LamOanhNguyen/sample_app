@@ -63,6 +63,11 @@ en:
     new:
       title: "Sign up"
       text-1: "This will be a signup page for new users."
+      text-3: "Sign up now!"
+      title_create: "Welcome to the Sample App!"
+      submit_session: "Log in"
+      submit_users: "Create my account"
+      title_invalid: "Invalid email/password combination"
   layouts:
     header:
       text-1: "sample app"
@@ -78,3 +83,6 @@ en:
       text-6: "Contact"
       text-7: "News"
   base_title: "Ruby on rails"
+  user_controller:
+      title_create: "Welcome to the Sample App!"
+  not_find_user: "Not find request user"
