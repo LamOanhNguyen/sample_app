@@ -4,9 +4,12 @@ require "rails/test_help"
 
 module ActiveSupport
   class TestCase
+    fixtures :all
+    def is_logged_in?
+      !session[:user_id].nil?
+    end
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     include ApplicationHelper
-    fixtures :all
   end
   # Add more helper methods to be used by all tests here...
 end
