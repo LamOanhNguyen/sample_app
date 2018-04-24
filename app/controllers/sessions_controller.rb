@@ -3,19 +3,16 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by email: params[:session][:email].downcase
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_back_or user
-      # Log the user in and redirect to the user"s show page.
+    if user && password_authenticate?(user)
+      action_vactivated? user
     else
-      flash.now[:danger] = t ".invalid_acc"
+      flash.now[:danger] = I18n.t("users.new.invalid_acc")
       render :new
     end
   end
 
   def destroy
-    log_out if logged_in?
+    log_out
     redirect_to root_url
   end
 

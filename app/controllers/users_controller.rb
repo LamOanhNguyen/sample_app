@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
-  before_action :load_user, except: %i(index new create)
-  before_action :logged_in_user, except: %i(new create)
+  before_action :load_user, only: %i(edit update show correct_user)
+  before_action :logged_in_user, only: %i(index edit update destroy show)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: :destroy
-
   def index
     @users = User.paginate page: params[:page], per_page: Settings.user.number_items_per_page
   end
 
   def show
-    @user = User.find_by id: params[:id]
-    return if @user
-    flash[:danger] = t ".not_find_user"
-    redirect_to root_url
+    if @user.blank?
+      redirect_to signup_path
+    else
+      render :show
+    end
   end
 
   def new
@@ -22,9 +22,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
-      flash[:success] = t ".title_create"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       render :new
     end
@@ -45,9 +45,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = t ".users.index.success_msg"
+      flash[:success] = I18n.t ".users.index.success_msg"
     else
-      flash[:danger] = t ".users.index.error_msg"
+      flash[:danger] = I18n.t ".users.index.error_msg"
     end
     redirect_to users_url
   end
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
   def logged_in_user
     unless logged_in?
-      flash[:danger] = I18n.t ".please_log_in."
+      flash[:danger] = I18n.t "users.new.please_log_in."
       store_location
       redirect_to login_url
     end
